@@ -1,0 +1,87 @@
+[出力物タイトル]
+教材タイトル
+
+[出力物内容]
+1. PythonとPolarsの基礎
+
+[出力物タイトル]
+教材概要
+
+[出力物内容]
+この教材では、Pythonの基本的な文法と、データ分析ライブラリPolarsの基本的な使い方について学びます。Pythonの基礎としては、変数、型、制御文、関数、クラスについて学びます。Polarsについては、データフレームの作成、データの読み込み、基本的なデータ操作（選択、フィルタリング、ソート、集約）について学びます。
+
+[出力物タイトル]
+教材テキスト
+
+[出力物内容]
+1. Pythonの基本
+    1. Pythonの変数と型
+    2. Pythonの制御文
+    3. Pythonの関数とクラス
+2. Polarsの基本
+    1. データフレームの作成
+    2. データの読み込み
+    3. 基本的なデータ操作（選択、フィルタリング、ソート、集約）
+
+[出力物タイトル]
+サンプルコード
+
+[出力物内容]
+```python
+# Pythonの基本
+# 変数と型
+a = 10
+b = 3.14
+c = 'hello'
+d = True
+print(type(a), type(b), type(c), type(d))
+
+# 制御文
+for i in range(5):
+    if i % 2 == 0:
+        print(f'{i} is even')
+    else:
+        print(f'{i} is odd')
+
+# 関数とクラス
+def add(a, b):
+    return a + b
+
+class Calculator:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def add(self):
+        return self.x + self.y
+
+calc = Calculator(10, 20)
+print(calc.add())
+
+# Polarsの基本
+import polars as pl
+
+# データフレームの作成
+df = pl.DataFrame({
+    'a': [1, 2, 3],
+    'b': ['x', 'y', 'z']
+})
+
+# データの読み込み
+# df = pl.read_csv('data.csv')
+
+# 基本的なデータ操作
+df = df.select(['a', 'b'])
+df = df.filter(pl.col('a') > 1)
+df = df.sort('a')
+df = df.groupby('b').agg(pl.col('a').sum())
+print(df)
+```
+
+[出力物タイトル]
+作業手順
+
+[出力物内容]
+1. Pythonの基本の項目下のサンプルコードをPython環境で順番に実行してみてください。
+2. Polarsの基本の項目下のサンプルコードのデータフレームの作成部分をPython環境で実行してみてください。
+3. データの読み込み部分は、実際にデータがある場合に試してみてください。
+4. 基本的なデータ操作の部分は、作成したデータフレームに対して実行してみてください。各操作の結果を確認しながら進めてみてください。
